@@ -39,7 +39,11 @@ import SectionDark from "views/index-sections/SectionDark.js";
 import SectionLogin from "views/index-sections/SectionLogin.js";
 import SectionExamples from "views/index-sections/SectionExamples.js";
 import SectionDownload from "views/index-sections/SectionDownload.js";
-import Cv from "views/cv/Cv"
+import Whoami from "./cv/Whoami";
+import Work from "./cv/Work";
+import AllPages from "pdf-all-pages";
+import cv from "../assets/cv.pdf"
+
 
 export default function Index() {
   document.documentElement.classList.remove("nav-open");
@@ -53,22 +57,24 @@ export default function Index() {
     <>
       <IndexNavbar />
       <IndexHeader />
-      <Cv/>
-      <div className="main">
-        <SectionButtons />
-        {/* <SectionNavbars />
-        <SectionNavigation />
-        <SectionProgress />
-        <SectionNotifications />
-        <SectionTypography />
-        <SectionJavaScript />
-        <SectionCarousel />
-        <SectionNucleoIcons />
-        <SectionDark />
-        <SectionLogin />
-        <SectionExamples />
-        <SectionDownload />
-        <DemoFooter /> */}
+      <div className="main margin-auto">
+        <AllPages pdf={cv}/>
+        {/* <Whoami /> */}
+        {/* <Work /> */}
+        {/* <SectionButtons /> */}
+        {/* <SectionNavbars /> */}
+        {/* <SectionNavigation /> */}
+        {/* <SectionProgress /> */}
+        {/* <SectionNotifications /> */}
+        {/* <SectionTypography /> */}
+        {/* <SectionJavaScript /> */}
+        {/* <SectionCarousel /> */}
+        {/* <SectionNucleoIcons /> */}
+        {/* <SectionDark /> */}
+        {/* <SectionLogin /> */}
+        {/* <SectionExamples /> */}
+        {/* <SectionDownload /> */}
+        {/* <DemoFooter /> */}
       </div>
     </>
   );

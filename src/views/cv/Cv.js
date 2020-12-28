@@ -1,38 +1,31 @@
-/*!
+import React from 'react';
+import { Document, Page, Text, View, StyleSheet } from '@react-pdf/renderer';
 
-=========================================================
-* Paper Kit React - v1.2.0
-=========================================================
+// Create styles
+const styles = StyleSheet.create({
+  page: {
+    flexDirection: 'row',
+    backgroundColor: '#E4E4E4'
+  },
+  section: {
+    margin: 10,
+    padding: 10,
+    flexGrow: 1
+  }
+});
 
-* Product Page: https://www.creative-tim.com/product/paper-kit-react
+// Create Document Component
+const MyDocument = () => (
+  <Document>
+    <Page size="A4" style={styles.page}>
+      <View style={styles.section}>
+        <Text>Section #1</Text>
+      </View>
+      <View style={styles.section}>
+        <Text>Section #2</Text>
+      </View>
+    </Page>
+  </Document>
+);
 
-* Copyright 2020 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/paper-kit-react/blob/master/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
-import React from "react";
-// nodejs library that concatenates strings
-import classnames from "classnames";
-// reactstrap components
-import {
-  Button,
-  Collapse,
-  NavbarBrand,
-  Navbar,
-  NavItem,
-  NavLink,
-  Nav,
-  Container,
-} from "reactstrap";
-
-export default function Cv() {
-  return (
-      
-  );
-}
+export default Cv

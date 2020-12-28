@@ -128,11 +128,11 @@ function IndexNavbar() {
               <Button
                 className="btn-round"
                 color="danger"
-                href="#pablo"
+                // href="#pablo"
                 target="_blank"
                 enabled
               >
-                Me contacter
+               Download my CV
               </Button>
             </NavItem>
           </Nav>
