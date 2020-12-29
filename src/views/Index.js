@@ -16,7 +16,10 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import React from "react";
+import React, { useState } from "react";
+import { Document, Page, pdfjs } from 'react-pdf';
+// pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
+
 
 // reactstrap components
 
@@ -43,6 +46,9 @@ import Whoami from "./cv/Whoami";
 import Work from "./cv/Work";
 import AllPages from "pdf-all-pages";
 import cv from "../assets/cv.pdf"
+import Button from "reactstrap/lib/Button";
+
+
 
 
 export default function Index() {
@@ -53,28 +59,39 @@ export default function Index() {
       document.body.classList.remove("index");
     };
   });
+  const [numPages, setNumPages] = useState(null);
+  const [pageNumber, setPageNumber] = useState(1);
+
+  function onDocumentLoadSuccess({ numPages }) {
+    setNumPages(numPages);
+  }
   return (
     <>
       <IndexNavbar />
       <IndexHeader />
-      <div className="main margin-auto">
-        <AllPages pdf={cv}/>
-        {/* <Whoami /> */}
-        {/* <Work /> */}
-        {/* <SectionButtons /> */}
-        {/* <SectionNavbars /> */}
-        {/* <SectionNavigation /> */}
-        {/* <SectionProgress /> */}
-        {/* <SectionNotifications /> */}
-        {/* <SectionTypography /> */}
-        {/* <SectionJavaScript /> */}
-        {/* <SectionCarousel /> */}
-        {/* <SectionNucleoIcons /> */}
-        {/* <SectionDark /> */}
-        {/* <SectionLogin /> */}
-        {/* <SectionExamples /> */}
-        {/* <SectionDownload /> */}
-        {/* <DemoFooter /> */}
+      <div className="main">
+      <Document
+        file={cv}
+        onLoadSuccess={onDocumentLoadSuccess}
+      >
+        <Page pageNumber={pageNumber} />
+        <p>Page {pageNumber} of {numPages}</p>
+      </Document>
+        {/* <AllPages pdf={cv}/> */}
+        {/* <SectionButtons />
+        <SectionNavbars />
+        <SectionNavigation />
+        <SectionProgress />
+        <SectionNotifications />
+        <SectionTypography />
+        <SectionJavaScript /> */}
+        <SectionCarousel />
+        {/* <SectionNucleoIcons />
+        <SectionDark />
+        <SectionLogin />
+        <SectionExamples />
+        <SectionDownload />
+        <DemoFooter /> */}
       </div>
     </>
   );
