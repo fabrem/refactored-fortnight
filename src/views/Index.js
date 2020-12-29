@@ -70,13 +70,13 @@ export default function Index() {
       <IndexNavbar />
       <IndexHeader />
       <div className="main">
-      <Document
+      {/* <Document
         file={cv}
         onLoadSuccess={onDocumentLoadSuccess}
       >
         <Page pageNumber={pageNumber} />
         <p>Page {pageNumber} of {numPages}</p>
-      </Document>
+      </Document> */}
         {/* <AllPages pdf={cv}/> */}
         {/* <SectionButtons />
         <SectionNavbars />

@@ -34,20 +34,20 @@ import {
 
 const items = [
   {
-    src: require("assets/img/soroush-karimi.jpg"),
+    src: require("assets/img/page1-cv.png"),
     altText: "Somewhere",
     caption: "Somewhere",
   },
   {
-    src: require("assets/img/federico-beccari.jpg"),
+    src: require("assets/img/page2-cv.png"),
     altText: "Somewhere else",
     caption: "Somewhere else",
   },
-  {
-    src: require("assets/img/joshua-stannard.jpg"),
-    altText: "Here it is",
-    caption: "Here it is",
-  },
+  // {
+  //   src: require("assets/img/joshua-stannard.jpg"),
+  //   altText: "Here it is",
+  //   caption: "Here it is",
+  // },
 ];
 
 function SectionCarousel() {
@@ -84,6 +84,7 @@ function SectionCarousel() {
                   activeIndex={activeIndex}
                   next={next}
                   previous={previous}
+                  interval={false}
                 >
                   <CarouselIndicators
                     items={items}
